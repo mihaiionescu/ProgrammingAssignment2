@@ -1,5 +1,11 @@
 ## Receives a matrix as argument and 
 ## creates a matrix object able to to store its cache.
+##
+## Available functions:
+## get        - returns the matrix
+## set        - set a matrix
+## getinverse - retrieves the cached inversed matrix
+## setinverse - sets the cached inversed matrix
 makeCacheMatrix <- function(x = matrix()) {
     cached_inverse <- NULL
     set <- function(y) {
@@ -26,6 +32,7 @@ cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
     inversed_m <- x$getinverse()
     if(!is.null(inversed_m)) {
+        ## If inverse was cached, display corresponding message
         message("returning inversed matrix from cache")
         return(inversed_m)
     }
